@@ -240,6 +240,7 @@
 </node>
 <node CREATED="1506218643539" ID="ID_1237762191" MODIFIED="1506218651449" TEXT="Ouput">
 <node CREATED="1506218652948" ID="ID_347674017" MODIFIED="1506301961449" TEXT="print(&quot;Something&quot;)"/>
+<node CREATED="1506302093858" ID="ID_75579026" MODIFIED="1506302104505" TEXT="print(&quot;Result&quot;, var_result)"/>
 </node>
 </node>
 </node>
