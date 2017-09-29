@@ -355,6 +355,43 @@
 </node>
 </node>
 </node>
+<node CREATED="1506650871088" ID="ID_776602041" MODIFIED="1506650934561" TEXT="Regular expressions">
+<node CREATED="1506650944347" ID="ID_1349219822" MODIFIED="1506651128298" TEXT="#This is a completely different subject in the programming world which means you need to learn all about it, we only teach how to implement this in Python"/>
+<node CREATED="1506651209317" ID="ID_1974713627" MODIFIED="1506651300521" STYLE="fork" TEXT="#It is used to search pattern"/>
+<node CREATED="1506651307259" ID="ID_1502507693" MODIFIED="1506651333727" TEXT="Syntax">
+<node CREATED="1506651133135" ID="ID_415303922" MODIFIED="1506651148049" TEXT="import re #Import the module"/>
+<node CREATED="1506651366019" ID="ID_1541929029" MODIFIED="1506652396896" TEXT="pattern = re.compile(&apos;[regular_expression]&apos;)">
+<node CREATED="1506651483740" ID="ID_1683796919" MODIFIED="1506652343871" TEXT="#Is strongly recommended to save the regular expression in a variable otherwise it has to be computed every time it was called that means consume more resources"/>
+<node CREATED="1506652369487" ID="ID_885153274" MODIFIED="1506652404207" TEXT="pattern = r&apos;[regular_expression]&apos;"/>
+</node>
+<node CREATED="1506651414825" ID="ID_1735303990" MODIFIED="1506651460050" TEXT="pattern.match(&quot;raw text which contains the patterns&quot;)"/>
+</node>
+<node CREATED="1506652481696" ID="ID_549153647" MODIFIED="1506652487820" TEXT="Characters of patterns">
+<node CREATED="1506652489522" ID="ID_1316804786" MODIFIED="1506652493162" TEXT="Normal characters">
+<node CREATED="1506652496145" ID="ID_1188832037" MODIFIED="1506652500812" TEXT="Digits 0-9"/>
+<node CREATED="1506652501460" ID="ID_1377837992" MODIFIED="1506652514341" TEXT="Alphabetic a-z|A-Z"/>
+</node>
+<node CREATED="1506652800261" ID="ID_1220457190" MODIFIED="1506652807568" TEXT="Character classes">
+<node CREATED="1506652831892" ID="ID_982399944" MODIFIED="1506652888792" TEXT="#Special characters which do special actions"/>
+<node CREATED="1506653296542" ID="ID_127819913" MODIFIED="1506653346372" TEXT="\[n],\A,\b,\B,\d,\D,\s,\S,\w,\W,\Z"/>
+<node CREATED="1506653261469" ID="ID_109752521" MODIFIED="1506653262298" TEXT="https://www.regular-expressions.info/refcharclass.html"/>
+</node>
+<node CREATED="1506653406662" ID="ID_183490809" MODIFIED="1506653751754" TEXT="Metacharacters">
+<node CREATED="1506653421702" ID="ID_119038641" MODIFIED="1506653465605" TEXT=". ^ $ * + ? { } [ ] \ | ( )"/>
+<node CREATED="1506653641312" ID="ID_1693847969" MODIFIED="1506653642210" TEXT="https://www.regular-expressions.info/refrepeat.html"/>
+</node>
+</node>
+<node CREATED="1506652537218" ID="ID_225905950" MODIFIED="1506652542758" TEXT="Parameters">
+<node CREATED="1506652549675" ID="ID_1882263361" MODIFIED="1506652554161" TEXT="re.LOCALE">
+<node CREATED="1506652564591" ID="ID_41060506" MODIFIED="1506652594301" TEXT="#Accept characters with the local region for example accents">
+<node CREATED="1506652684353" ID="ID_54227513" MODIFIED="1506652686444" TEXT="Example">
+<node CREATED="1506652689635" ID="ID_273765168" MODIFIED="1506652720309" TEXT="pattern = re.compile(&apos;[a-zA-Z]&apos;, re.LOCALE)"/>
+<node CREATED="1506652721253" ID="ID_1583458060" MODIFIED="1506652787096" TEXT="#Match [&quot;M&#xe9;xico&quot;,&quot;Austria&quot;,&quot;K&#xf6;ln&quot;]"/>
+</node>
+</node>
+</node>
+</node>
+</node>
 <node CREATED="1506475640816" ID="ID_1597385216" MODIFIED="1506479818243" TEXT="Object-Oriented Programming">
 <node CREATED="1506476125704" ID="ID_1078070327" MODIFIED="1506479818413" TEXT="Definition">
 <node CREATED="1506476170449" ID="ID_70225427" MODIFIED="1506480147900" TEXT="Create abstractas schemes of the real world to run modeling functions in the computer"/>
@@ -437,6 +474,9 @@
 </node>
 <node CREATED="1506479485662" ID="ID_305857905" MODIFIED="1506479818244" TEXT="print.format">
 <node CREATED="1506479494291" ID="ID_1778404472" MODIFIED="1506479495005" TEXT="https://pyformat.info/"/>
+</node>
+<node CREATED="1506653269050" ID="ID_429115515" MODIFIED="1506653274642" TEXT="RegEx python">
+<node CREATED="1506653275506" ID="ID_568823562" MODIFIED="1506653661861" TEXT="https://www.regular-expressions.info/refcharacters.html"/>
 </node>
 </node>
 </node>
