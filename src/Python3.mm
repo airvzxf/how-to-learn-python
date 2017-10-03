@@ -360,9 +360,38 @@
 <node CREATED="1506651209317" ID="ID_1974713627" MODIFIED="1506651300521" STYLE="fork" TEXT="#It is used to search pattern"/>
 <node CREATED="1506651307259" ID="ID_1502507693" MODIFIED="1506651333727" TEXT="Syntax">
 <node CREATED="1506651133135" ID="ID_415303922" MODIFIED="1506651148049" TEXT="import re #Import the module"/>
-<node CREATED="1506651366019" ID="ID_1541929029" MODIFIED="1506652396896" TEXT="pattern = re.compile(&apos;[regular_expression]&apos;)">
+<node CREATED="1506651366019" ID="ID_1541929029" MODIFIED="1506996915333" TEXT="pattern = re.compile(&apos;[regular_expression]&apos;, [FLAG] | [FLAG] | [FLAG])">
 <node CREATED="1506651483740" ID="ID_1683796919" MODIFIED="1506652343871" TEXT="#Is strongly recommended to save the regular expression in a variable otherwise it has to be computed every time it was called that means consume more resources"/>
 <node CREATED="1506652369487" ID="ID_885153274" MODIFIED="1506652404207" TEXT="pattern = r&apos;[regular_expression]&apos;"/>
+<node CREATED="1506994011492" ID="ID_1811614159" MODIFIED="1506994047069" TEXT="# The flags are the params which condition the searching pattern in the regular expression"/>
+<node CREATED="1506652537218" ID="ID_841935095" MODIFIED="1506652542758" TEXT="Parameters">
+<node CREATED="1506652549675" ID="ID_1170405315" MODIFIED="1506996752783" TEXT="re.LOCALE, re.L">
+<node CREATED="1506652564591" ID="ID_1043595655" MODIFIED="1506652594301" TEXT="#Accept characters with the local region for example accents">
+<node CREATED="1506652684353" ID="ID_606893677" MODIFIED="1506652686444" TEXT="Example">
+<node CREATED="1506652689635" ID="ID_1836051198" MODIFIED="1506652720309" TEXT="pattern = re.compile(&apos;[a-zA-Z]&apos;, re.LOCALE)"/>
+<node CREATED="1506652721253" ID="ID_1733183754" MODIFIED="1506652787096" TEXT="#Match [&quot;M&#xe9;xico&quot;,&quot;Austria&quot;,&quot;K&#xf6;ln&quot;]"/>
+</node>
+</node>
+</node>
+<node CREATED="1506994141402" ID="ID_225859" MODIFIED="1506996747631" TEXT="re.DOTALL, re.S">
+<node CREATED="1506994182316" ID="ID_1171052003" MODIFIED="1506994188197" TEXT="#Make the &apos;.&apos; special character match any character at all, including a newline"/>
+</node>
+<node CREATED="1506996701058" ID="ID_1012550589" MODIFIED="1506996742575" TEXT="re.ASCII, re.A">
+<node CREATED="1506996706212" ID="ID_510272235" MODIFIED="1506996721838" TEXT="# Match the special characters only with ASCII characters"/>
+</node>
+<node CREATED="1506996757364" ID="ID_472621230" MODIFIED="1506996764015" TEXT="re.IGNORECASE, re.I">
+<node CREATED="1506996766098" ID="ID_1136680804" MODIFIED="1506996787246" TEXT="# Match lower and upper cases"/>
+</node>
+<node CREATED="1506996793233" ID="ID_1020627644" MODIFIED="1506996801498" TEXT="re.MULTILINE, re.M">
+<node CREATED="1506996816356" ID="ID_1713533162" MODIFIED="1506996838695" TEXT="# Multiline matching, affected the ^ and $"/>
+</node>
+<node CREATED="1506996845310" ID="ID_286037770" MODIFIED="1506996878386" TEXT="re.VERBOSE, re.X">
+<node CREATED="1506996856623" ID="ID_431079037" MODIFIED="1506996871014" TEXT="# Enable verbose"/>
+</node>
+<node CREATED="1506994218693" ID="ID_1250991754" MODIFIED="1506994221859" TEXT="Source">
+<node CREATED="1506994222622" ID="ID_715310165" MODIFIED="1506994250470" TEXT="https://docs.python.org/3/library/re.html#module-contents"/>
+</node>
+</node>
 </node>
 <node CREATED="1506651414825" ID="ID_1735303990" MODIFIED="1506651460050" TEXT="pattern.match(&quot;raw text which contains the patterns&quot;)"/>
 </node>
@@ -371,33 +400,80 @@
 <node CREATED="1506652496145" ID="ID_1188832037" MODIFIED="1506652500812" TEXT="Digits 0-9"/>
 <node CREATED="1506652501460" ID="ID_1377837992" MODIFIED="1506652514341" TEXT="Alphabetic a-z|A-Z"/>
 </node>
-<node CREATED="1506652800261" ID="ID_1220457190" MODIFIED="1506652807568" TEXT="Character classes">
-<node CREATED="1506652831892" ID="ID_982399944" MODIFIED="1506652888792" TEXT="#Special characters which do special actions"/>
-<node CREATED="1506653296542" ID="ID_127819913" MODIFIED="1506653346372" TEXT="\[n],\A,\b,\B,\d,\D,\s,\S,\w,\W,\Z"/>
-<node CREATED="1506653261469" ID="ID_109752521" MODIFIED="1506653262298" TEXT="https://www.regular-expressions.info/refcharclass.html"/>
-</node>
-<node CREATED="1506653406662" ID="ID_183490809" MODIFIED="1506653751754" TEXT="Metacharacters">
-<node CREATED="1506653421702" ID="ID_119038641" MODIFIED="1506653465605" TEXT=". ^ $ * + ? { } [ ] \ | ( )"/>
-<node CREATED="1506653641312" ID="ID_1693847969" MODIFIED="1506653642210" TEXT="https://www.regular-expressions.info/refrepeat.html"/>
-</node>
-</node>
-<node CREATED="1506652537218" ID="ID_225905950" MODIFIED="1506652542758" TEXT="Parameters">
-<node CREATED="1506652549675" ID="ID_1882263361" MODIFIED="1506652554161" TEXT="re.LOCALE">
-<node CREATED="1506652564591" ID="ID_41060506" MODIFIED="1506652594301" TEXT="#Accept characters with the local region for example accents">
-<node CREATED="1506652684353" ID="ID_54227513" MODIFIED="1506652686444" TEXT="Example">
-<node CREATED="1506652689635" ID="ID_273765168" MODIFIED="1506652720309" TEXT="pattern = re.compile(&apos;[a-zA-Z]&apos;, re.LOCALE)"/>
-<node CREATED="1506652721253" ID="ID_1583458060" MODIFIED="1506652787096" TEXT="#Match [&quot;M&#xe9;xico&quot;,&quot;Austria&quot;,&quot;K&#xf6;ln&quot;]"/>
+<node CREATED="1506652800261" ID="ID_1220457190" MODIFIED="1506652807568" TEXT="Character classes"/>
+<node CREATED="1506653406662" ID="ID_183490809" MODIFIED="1506993759643" TEXT="Metacharacters"/>
+<node CREATED="1506993788136" ID="ID_468594530" MODIFIED="1506993788722" TEXT="Special Character Classes"/>
+<node CREATED="1506993792514" ID="ID_1737772001" MODIFIED="1506993793055" TEXT="Repetition Cases "/>
+<node CREATED="1506993796481" ID="ID_1055074180" MODIFIED="1506993796922" TEXT="Nongreedy repetition"/>
+<node CREATED="1506993799875" ID="ID_1465606811" MODIFIED="1506993800370" TEXT="Grouping with Parentheses"/>
+<node CREATED="1506993805236" ID="ID_366511022" MODIFIED="1506993805568" TEXT="Backreferences"/>
+<node CREATED="1506993809409" ID="ID_715608610" MODIFIED="1506993809888" TEXT="Alternatives"/>
+<node CREATED="1506993813695" ID="ID_829284214" MODIFIED="1506993814155" TEXT="Anchors"/>
+<node CREATED="1506993824538" ID="ID_1038270204" MODIFIED="1506993825087" TEXT="Special Syntax with Parentheses"/>
+<node CREATED="1506993760689" ID="ID_372962165" MODIFIED="1506993773197" TEXT="Source">
+<node CREATED="1506993774572" ID="ID_820214718" MODIFIED="1506993775819" TEXT="https://www.tutorialspoint.com/python/python_reg_expressions.htm"/>
 </node>
 </node>
+<node CREATED="1506994698722" ID="ID_1721217205" MODIFIED="1506994701269" TEXT="Functions">
+<node CREATED="1506994705358" ID="ID_1949013442" MODIFIED="1506995772303" TEXT="re.compile(pattern, string)">
+<node CREATED="1506994749775" ID="ID_1120823696" MODIFIED="1506994808800" TEXT="# Compile expressions as a RegEx objects internally, and the caches this to use later."/>
+</node>
+<node CREATED="1506994813054" ID="ID_1635326896" MODIFIED="1506995774378" TEXT="re.search(pattern, string)">
+<node CREATED="1506994828495" ID="ID_1278887160" MODIFIED="1506994909651" TEXT="# Search in a the string for the first occurrence of a pattern"/>
+<node CREATED="1506996357022" ID="ID_1840051875" MODIFIED="1506996364930" TEXT="# Return RegEx object"/>
+<node CREATED="1506996369039" ID="ID_905122258" MODIFIED="1506996393513" TEXT="matches = re.search(pattern, string)"/>
+<node CREATED="1506996394279" ID="ID_1792647242" MODIFIED="1506996402541" TEXT="matches.group(2)"/>
+</node>
+<node CREATED="1506994977267" ID="ID_201389795" MODIFIED="1506995776421" TEXT="re.match(pattern, string)">
+<node CREATED="1506995371618" ID="ID_1439257352" MODIFIED="1506996429095" TEXT="# Exactly like search but match only if the search happens at the beginning of the string."/>
+<node CREATED="1506994981607" ID="ID_395027993" MODIFIED="1506995533187" TEXT="# Return None if it find nothing"/>
+</node>
+<node CREATED="1506995549272" ID="ID_1234656490" MODIFIED="1506995778913" TEXT="re.fullmatch(pattern, string)">
+<node CREATED="1506995555538" ID="ID_1079891841" MODIFIED="1506995629447" TEXT="# Only match if the occurrence is equal to the full string."/>
+</node>
+<node CREATED="1506995650950" ID="ID_1013692363" MODIFIED="1506995812230" TEXT="re.split(pattern, string, No.Splits)">
+<node CREATED="1506995664889" ID="ID_1580354746" MODIFIED="1506995696439" TEXT="# Segment you string in substrings based on a pattern"/>
+<node CREATED="1506995816525" ID="ID_1696655648" MODIFIED="1506995828563" TEXT="# No. of splits, limit the number of result"/>
+<node CREATED="1506995708997" ID="ID_894333210" MODIFIED="1506995716121" TEXT="# Return an array"/>
+</node>
+<node CREATED="1506995832446" ID="ID_1733268929" MODIFIED="1506995911759" TEXT="re.sub(pattern, replacement, string, No.Subs)">
+<node CREATED="1506995854402" ID="ID_1697846261" MODIFIED="1506995864526" TEXT="# Substitute the matches for other string"/>
+<node CREATED="1506995913137" ID="ID_538011684" MODIFIED="1506995927654" TEXT="# No. of Substitutions, limit the number of subs"/>
+<node CREATED="1506996000584" ID="ID_1697061057" MODIFIED="1506996009015" TEXT="# Return corrected string"/>
+</node>
+<node CREATED="1506995973518" ID="ID_844349439" MODIFIED="1506995985702" TEXT="re.subn(pattern, replacement, string, No.Subs)">
+<node CREATED="1506996012618" ID="ID_467198712" MODIFIED="1506996206760" TEXT="# Same like re.sub() but it return a tuple with two values: (corrected_string, No.Subs)"/>
+</node>
+<node CREATED="1506996229417" ID="ID_650795089" MODIFIED="1506996299755" TEXT="re.findall(pattern, string)">
+<node CREATED="1506996245071" ID="ID_9839768" MODIFIED="1506996265463" TEXT="# Find in a string and return a list of all matches"/>
+</node>
+<node CREATED="1506996474488" ID="ID_925084019" MODIFIED="1506996480949" TEXT="re.finditer(pattern, string)">
+<node CREATED="1506996506930" ID="ID_38940651" MODIFIED="1506996526970" TEXT="# Same like findall but you can iterate every search"/>
+<node CREATED="1506996534905" ID="ID_357299445" MODIFIED="1506996549181" TEXT="for match in re.finditer(pattern, string):"/>
+<node CREATED="1506996587741" ID="ID_1561516532" MODIFIED="1506996603751" TEXT="print(match.start, match.group(1))"/>
+<node CREATED="1506996604510" ID="ID_934265912" MODIFIED="1506996634299" TEXT="#print 7, hello"/>
 </node>
 </node>
+<node CREATED="1506996968954" ID="ID_1080425556" MODIFIED="1506996971967" TEXT="Notes of patterns">
+<node CREATED="1506996973262" ID="ID_1094452770" MODIFIED="1506997117754" TEXT="1. Sppliting patterns">
+<node CREATED="1506996981812" ID="ID_1245655903" MODIFIED="1506997105893" TEXT="# It&apos;s better create one pattern to search the general and then apply another pattern to search something specific."/>
+</node>
+<node CREATED="1506997122631" ID="ID_552885924" MODIFIED="1506997268420" TEXT="2. Simple search vs regEx">
+<node CREATED="1506997228739" ID="ID_1919962195" MODIFIED="1506997316514" TEXT="# If you are searching a specific word without pattern variants, it&apos;s much better use the simple search it consume less resources."/>
+</node>
+</node>
+</node>
+<node CREATED="1506998352646" ID="ID_311220369" MODIFIED="1506998359982" TEXT="Send parameters from the command line">
+<node CREATED="1506998372617" ID="ID_1777899188" MODIFIED="1506998375632" TEXT="Sys module"/>
+<node CREATED="1506998382031" ID="ID_1409471239" MODIFIED="1506998385781" TEXT="Getopt module"/>
+<node CREATED="1506998393923" ID="ID_652021420" MODIFIED="1506998398017" TEXT="Fileinput module"/>
 </node>
 <node CREATED="1506475640816" ID="ID_1597385216" MODIFIED="1506479818243" TEXT="Object-Oriented Programming">
 <node CREATED="1506476125704" ID="ID_1078070327" MODIFIED="1506479818413" TEXT="Definition">
 <node CREATED="1506476170449" ID="ID_70225427" MODIFIED="1506480147900" TEXT="Create abstractas schemes of the real world to run modeling functions in the computer"/>
 <node CREATED="1506476132487" ID="ID_310281676" MODIFIED="1506476662835" TEXT="Create your owns data structures to extend more complex data type"/>
 </node>
-<node CREATED="1506476774992" ID="ID_1883949167" MODIFIED="1506479818416" TEXT="Common">
+<node CREATED="1506476774992" ID="ID_1883949167" MODIFIED="1506998061929" TEXT="Common class">
 <node CREATED="1506476785628" ID="ID_1040579423" MODIFIED="1506479818553" TEXT="General">
 <node CREATED="1506476790676" ID="ID_878822736" MODIFIED="1506476818242" TEXT="Class Room:"/>
 </node>
@@ -476,6 +552,8 @@
 <node CREATED="1506479494291" ID="ID_1778404472" MODIFIED="1506479495005" TEXT="https://pyformat.info/"/>
 </node>
 <node CREATED="1506653269050" ID="ID_429115515" MODIFIED="1506653274642" TEXT="RegEx python">
+<node CREATED="1506994099095" ID="ID_974883229" MODIFIED="1506994100685" TEXT="https://www.tutorialspoint.com/python/python_reg_expressions.htm"/>
+<node CREATED="1506994260247" ID="ID_1516434345" MODIFIED="1506994261129" TEXT="https://docs.python.org/3/library/re.html"/>
 <node CREATED="1506653275506" ID="ID_568823562" MODIFIED="1506653661861" TEXT="https://www.regular-expressions.info/refcharacters.html"/>
 </node>
 </node>
