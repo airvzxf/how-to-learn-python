@@ -464,9 +464,79 @@
 </node>
 </node>
 <node CREATED="1506998352646" ID="ID_311220369" MODIFIED="1506998359982" TEXT="Send parameters from the command line">
-<node CREATED="1506998372617" ID="ID_1777899188" MODIFIED="1506998375632" TEXT="Sys module"/>
-<node CREATED="1506998382031" ID="ID_1409471239" MODIFIED="1506998385781" TEXT="Getopt module"/>
-<node CREATED="1506998393923" ID="ID_652021420" MODIFIED="1506998398017" TEXT="Fileinput module"/>
+<node CREATED="1506998372617" ID="ID_1777899188" MODIFIED="1506998375632" TEXT="Sys module">
+<node CREATED="1507252521243" ID="ID_11568322" MODIFIED="1507252608823" TEXT="# Send parameters to python via command line, i.e.: python example.py &quot;house&quot; 1 &quot;testing&quot;"/>
+<node CREATED="1507253127496" ID="ID_1467459080" MODIFIED="1507253140521" TEXT="# The parameters are separated per spaces"/>
+<node CREATED="1507253401007" ID="ID_1929307931" MODIFIED="1507253406276" TEXT="# Limitations">
+<node CREATED="1507253416369" ID="ID_378697964" MODIFIED="1507253425600" TEXT="# There is not validation for the parameters"/>
+<node CREATED="1507253461857" ID="ID_1772981137" MODIFIED="1507253521550" TEXT="# Stdin input or list of files in command line, isn&apos;t handle on the right way. fileinput is the best oprion for this case"/>
+</node>
+<node CREATED="1507253169910" ID="ID_836624752" MODIFIED="1507253244877" TEXT="Syntax">
+<node CREATED="1507253252349" ID="ID_1180839248" MODIFIED="1507253254576" TEXT="import sys"/>
+<node CREATED="1507253258590" ID="ID_753678155" MODIFIED="1507253280775" TEXT="numParams = len(sys.argv)-1"/>
+<node CREATED="1507253286018" ID="ID_1262112917" MODIFIED="1507253309462" TEXT="pythonFile = sys.argv[0]"/>
+<node CREATED="1507253312622" ID="ID_1585658961" MODIFIED="1507253321534" TEXT="param1 = sys.argv[1]"/>
+</node>
+</node>
+<node CREATED="1506998382031" ID="ID_1409471239" MODIFIED="1506998385781" TEXT="Getopt module">
+<node CREATED="1507253633468" ID="ID_1668531461" MODIFIED="1507253646149" TEXT="# It helps to write a cleaner code"/>
+<node CREATED="1507253661840" ID="ID_1430376615" MODIFIED="1507253664735" TEXT="Syntax">
+<node CREATED="1507253666568" ID="ID_1344352667" MODIFIED="1507253674765" TEXT="import getopt, sys"/>
+<node CREATED="1507253682604" ID="ID_1007020162" MODIFIED="1507253720230" TEXT="fullCommandArgs = sys.argv[1:]">
+<node CREATED="1507253722747" ID="ID_105903365" MODIFIED="1507253741150" TEXT="# Get the first parameter and not the name of the file"/>
+</node>
+<node CREATED="1507253790843" ID="ID_1320656251" MODIFIED="1507253804551" TEXT="unixOptions = &quot;ho:v&quot;">
+<node CREATED="1507253890210" ID="ID_1113589858" MODIFIED="1507253906874" TEXT="# The colon (:) means it accept a value"/>
+<node CREATED="1507253950469" ID="ID_1171375864" MODIFIED="1507253970816" TEXT="# Example: example.py -h"/>
+<node CREATED="1507253971283" ID="ID_1327197341" MODIFIED="1507254016914" TEXT="# Example: example.py -o &quot;myOutput&quot;"/>
+</node>
+<node CREATED="1507253811799" ID="ID_834908161" MODIFIED="1507253851019" TEXT="gnuOptions = [&quot;help&quot;,&quot;output=&quot;,&quot;verbose&quot;]">
+<node CREATED="1507253910137" ID="ID_283537132" MODIFIED="1507253925792" TEXT="# The equal (=) means it accept a value"/>
+<node CREATED="1507253984422" ID="ID_1491352852" MODIFIED="1507253999164" TEXT="# Example: example.py --help"/>
+<node CREATED="1507253993888" ID="ID_1536330596" MODIFIED="1507254012564" TEXT="# Example: example.py --output=&quot;myOutput&quot;"/>
+</node>
+<node CREATED="1507254067063" ID="ID_567713032" MODIFIED="1507254071536" TEXT="try:"/>
+<node CREATED="1507254072091" ID="ID_520652929" MODIFIED="1507254249525" TEXT="-- options, arguments = getopt.getopt(fullCommandArgs, unixOptions, gnuOptions)"/>
+<node CREATED="1507254131133" ID="ID_1044079433" MODIFIED="1507254146321" TEXT="expect eror getopt.error as err:"/>
+<node CREATED="1507254146932" ID="ID_1263899537" MODIFIED="1507254244089" TEXT="-- print(str(err))"/>
+<node CREATED="1507254161051" ID="ID_1001224531" MODIFIED="1507254245974" TEXT="-- sys.exit(2)"/>
+<node CREATED="1507254251343" ID="ID_1058354004" MODIFIED="1507254299292" TEXT="for option, argument in options:"/>
+<node CREATED="1507254300424" ID="ID_1966274747" MODIFIED="1507254335332" TEXT="-- if option in (&quot;-o&quot;, &quot;--output&quot;):"/>
+<node CREATED="1507254345854" ID="ID_1003817262" MODIFIED="1507254378773" TEXT="-- -- print(&quot;Output option with arg: &quot;, argument)"/>
+</node>
+</node>
+<node CREATED="1506998393923" ID="ID_652021420" MODIFIED="1506998398017" TEXT="Fileinput module">
+<node CREATED="1507254736072" ID="ID_1388123319" MODIFIED="1507254787175" TEXT="# Catch input stream and files to read the info inside of it"/>
+<node CREATED="1507254582508" ID="ID_264975756" MODIFIED="1507254735648" TEXT="Syntax">
+<node CREATED="1507254587891" ID="ID_1071240526" MODIFIED="1507254592193" TEXT="import fileinput"/>
+<node CREATED="1507254600030" ID="ID_1027326353" MODIFIED="1507254606382" TEXT="for line in fileinput.input():">
+<node CREATED="1507255028563" ID="ID_334408001" MODIFIED="1507255214890" TEXT="# Reading compress data, it accept files gzip and bzip2"/>
+<node CREATED="1507255131815" ID="ID_934464587" MODIFIED="1507255162388" TEXT="fileinput.input(openhook=fileinput.hook_compressed)"/>
+<node CREATED="1507255247835" ID="ID_731974328" MODIFIED="1507255256154" TEXT="# Encoded option"/>
+<node CREATED="1507255257093" ID="ID_1562808502" MODIFIED="1507255294962" TEXT="fileinput.input(openhook=fileinput.hook_encoded(&quot;utf-8&quot;, &quot;surrogateescape&quot;))"/>
+</node>
+<node CREATED="1507254616224" ID="ID_1048414122" MODIFIED="1507254633302" TEXT="-- name = fileinput.filename()"/>
+<node CREATED="1507254638074" ID="ID_397791584" MODIFIED="1507254664310" TEXT="-- lineNo = fileinput.filelineno()"/>
+<node CREATED="1507254678930" ID="ID_1698974022" MODIFIED="1507254700800" TEXT="-- lineTotal = fileinput.lineno()"/>
+</node>
+<node CREATED="1507254910306" ID="ID_1251475418" MODIFIED="1507254916284" TEXT="Resources:">
+<node CREATED="1507254916286" ID="ID_1139320513" MODIFIED="1507254916980" TEXT="https://docs.python.org/3/library/fileinput.html"/>
+</node>
+</node>
+</node>
+<node CREATED="1507255469432" ID="ID_1649185081" MODIFIED="1507255482278" TEXT="Processing files separated by comma">
+<node CREATED="1507256414755" ID="ID_10829108" MODIFIED="1507256434560" TEXT="# Read a CSV file and extract the information"/>
+<node CREATED="1507256435212" ID="ID_792852578" MODIFIED="1507256572318" TEXT="# It&apos;s able to read, write and have many parameters options to setup it"/>
+<node CREATED="1507256167874" ID="ID_371532880" MODIFIED="1507256170288" TEXT="Syntax">
+<node CREATED="1507256172807" ID="ID_1835147266" MODIFIED="1507256173630" TEXT="import csv "/>
+<node CREATED="1507256239459" ID="ID_376398216" MODIFIED="1507256258684" TEXT="with open(&quot;file.csv&quot;) as csvFile:"/>
+<node CREATED="1507256267754" ID="ID_1860319765" MODIFIED="1507256285279" TEXT="-- log = csv.reader(csvFile)"/>
+<node CREATED="1507256312707" ID="ID_1989334707" MODIFIED="1507256319943" TEXT="-- -- for entry in log:"/>
+<node CREATED="1507256328575" ID="ID_1209553503" MODIFIED="1507256346092" TEXT="-- -- -- column1, column2 = entry"/>
+</node>
+<node CREATED="1507256390963" ID="ID_126295973" MODIFIED="1507256396861" TEXT="Resources:">
+<node CREATED="1507256396863" ID="ID_1361022823" MODIFIED="1507256397505" TEXT="https://docs.python.org/3/library/csv.html"/>
+</node>
 </node>
 <node CREATED="1506475640816" ID="ID_1597385216" MODIFIED="1506479818243" TEXT="Object-Oriented Programming">
 <node CREATED="1506476125704" ID="ID_1078070327" MODIFIED="1506479818413" TEXT="Definition">
@@ -550,6 +620,12 @@
 </node>
 <node CREATED="1506479485662" ID="ID_305857905" MODIFIED="1506479818244" TEXT="print.format">
 <node CREATED="1506479494291" ID="ID_1778404472" MODIFIED="1506479495005" TEXT="https://pyformat.info/"/>
+</node>
+<node CREATED="1507254925764" ID="ID_1144626378" MODIFIED="1507254933608" TEXT="fileinput module">
+<node CREATED="1507254934105" ID="ID_1941131715" MODIFIED="1507254935028" TEXT="https://docs.python.org/3/library/fileinput.html"/>
+</node>
+<node CREATED="1507256401546" ID="ID_5000986" MODIFIED="1507256406098" TEXT="CSV">
+<node CREATED="1507256406100" ID="ID_1864870916" MODIFIED="1507256406810" TEXT="https://docs.python.org/3/library/csv.html"/>
 </node>
 <node CREATED="1506653269050" ID="ID_429115515" MODIFIED="1506653274642" TEXT="RegEx python">
 <node CREATED="1506994099095" ID="ID_974883229" MODIFIED="1506994100685" TEXT="https://www.tutorialspoint.com/python/python_reg_expressions.htm"/>
