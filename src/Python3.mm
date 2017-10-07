@@ -116,6 +116,7 @@
 </node>
 <node CREATED="1506201096299" ID="ID_78705188" MODIFIED="1506479818508" TEXT="Strings">
 <node CREATED="1506201799241" ID="ID_421690240" MODIFIED="1506201805315" TEXT="Single or dobule quotes"/>
+<node CREATED="1507339072105" ID="ID_650844376" MODIFIED="1507339127503" TEXT="# String is an immutable data, that means you can modified if you need to change something you need to save again the new string in the variable"/>
 <node CREATED="1506201829458" ID="ID_788207880" MODIFIED="1506479818674" TEXT="Scape characters">
 <node CREATED="1506201836707" ID="ID_1004844198" MODIFIED="1506201861755" TEXT="Backslash \[character]"/>
 </node>
