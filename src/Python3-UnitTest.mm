@@ -6,6 +6,13 @@
 <node CREATED="1507601441084" ID="ID_486548607" MODIFIED="1507601442029" TEXT="A unit test is a scripted code designed to verify a small &quot;unit&quot; of functionality."/>
 <node CREATED="1507601467586" ID="ID_1331631045" MODIFIED="1507601473253" TEXT="Developers can use techniques like stubs and mocks to separate code into &quot;units&quot; and run unit level testing on the individual pieces."/>
 </node>
+<node CREATED="1507770892077" ID="ID_470834582" MODIFIED="1507770892832" POSITION="right" TEXT="Advantages">
+<node CREATED="1507770899485" ID="ID_897949597" MODIFIED="1507770900216" TEXT="It helps you to detect bugs early in the development cycle"/>
+<node CREATED="1507770903731" ID="ID_300387857" MODIFIED="1507770904265" TEXT="It helps you to write better programs"/>
+<node CREATED="1507770908207" ID="ID_1766257456" MODIFIED="1507770908539" TEXT="It syncs easily with other testing methods and tools"/>
+<node CREATED="1507770912166" ID="ID_301666475" MODIFIED="1507770912611" TEXT="It will have many fewer bugs"/>
+<node CREATED="1507770916439" ID="ID_1758309516" MODIFIED="1507770917085" TEXT="It is easier to modify in future with very less consequence"/>
+</node>
 <node CREATED="1507601561916" ID="ID_1547097093" MODIFIED="1507601592072" POSITION="right" TEXT="Techniques">
 <node CREATED="1507601576397" ID="ID_1667154751" MODIFIED="1507601581205" TEXT="Test-Driven Development (TDD)">
 <node CREATED="1507601626937" ID="ID_392239534" MODIFIED="1507601628853" TEXT="In TDD method, you first design Python Unit tests and only then you carry on writing the code that will implement this feature."/>
@@ -44,18 +51,23 @@
 <node CREATED="1507603185475" ID="ID_41406479" MODIFIED="1507603188703" POSITION="right" TEXT="Key classes">
 <node CREATED="1507603201575" ID="ID_1942327810" MODIFIED="1507603204904" TEXT="TestCase">
 <node CREATED="1507603229378" ID="ID_541168639" MODIFIED="1507603232400" TEXT="It bears the test routines and delivers hooks for making each routine and cleaning up thereafter."/>
+<node CREATED="1507767360678" ID="ID_1064679156" LINK="https://www.programcreek.com/python/example/20/unittest.TestCase" MODIFIED="1507767366519" TEXT="Link with examples"/>
 </node>
 <node CREATED="1507603208257" ID="ID_162251798" MODIFIED="1507603208613" TEXT="TestSuite">
 <node CREATED="1507603238281" ID="ID_1422355849" MODIFIED="1507603241129" TEXT="It caters as a collection container, and it can possess multiple testcase objects and multiple testsuites objects."/>
+<node CREATED="1507767322032" ID="ID_1051869850" LINK="https://www.programcreek.com/python/example/119/unittest.TestSuite" MODIFIED="1507767328825" TEXT="Link with examples"/>
 </node>
 <node CREATED="1507603211175" ID="ID_1783674421" MODIFIED="1507603211456" TEXT="TestLoader">
 <node CREATED="1507603251245" ID="ID_1025067241" MODIFIED="1507603260953" TEXT="It tests cases and suites defined locally or from an external file. It emits a testsuite objects that posseses those suites and cases."/>
+<node CREATED="1507767338318" ID="ID_486385840" LINK="https://www.programcreek.com/python/example/311/unittest.TestLoader" MODIFIED="1507767343488" TEXT="Link with examples"/>
 </node>
 <node CREATED="1507603213580" ID="ID_435761492" MODIFIED="1507603213878" TEXT="TextTestRunner">
 <node CREATED="1507603268989" ID="ID_469486499" MODIFIED="1507603270485" TEXT="To run the tests it caters a standard platform to execute the tests."/>
+<node CREATED="1507767565606" ID="ID_847916591" LINK="https://www.programcreek.com/python/example/153/unittest.TextTestRunner" MODIFIED="1507767571441" TEXT="Link with examples"/>
 </node>
 <node CREATED="1507603217862" ID="ID_1727805475" MODIFIED="1507603218379" TEXT="TestResults">
 <node CREATED="1507603275705" ID="ID_147686874" MODIFIED="1507603277326" TEXT="It offers a standard container for the test results."/>
+<node CREATED="1507767594922" ID="ID_1271969102" LINK="https://www.programcreek.com/python/example/1459/unittest.TestResult" MODIFIED="1507767600780" TEXT="Link with examples"/>
 </node>
 <node CREATED="1507603915818" ID="ID_399385263" MODIFIED="1507603920839" TEXT="Sources:">
 <node CREATED="1507603921664" ID="ID_569550583" LINK="http://blogs.wrox.com/article/python-test-cases-and-test-suites/" MODIFIED="1507603930978" TEXT="Link: Python Test Cases and Test Suites"/>
@@ -101,6 +113,33 @@
 <node CREATED="1507598337165" ID="ID_1053169299" MODIFIED="1507598340393" TEXT="test_module_2.py"/>
 </node>
 </node>
+</node>
+</node>
+</node>
+<node CREATED="1507766048687" ID="ID_1293426712" MODIFIED="1507766050919" POSITION="right" TEXT="Syntax">
+<node CREATED="1507766090302" ID="ID_265531795" MODIFIED="1507766104912" TEXT="class MyFirstTest(unittest.TestCase)"/>
+<node CREATED="1507766111573" ID="ID_1786985462" MODIFIED="1507766120462" TEXT="def setUp():">
+<node CREATED="1507768776475" ID="ID_1130924169" MODIFIED="1507768780933" TEXT="Hook method for setting up the test fixture before exercising it."/>
+</node>
+<node CREATED="1507766122401" ID="ID_1280908346" MODIFIED="1507766131797" TEXT="def teardown():">
+<node CREATED="1507768795649" ID="ID_1498903638" MODIFIED="1507768797021" TEXT="Hook method for deconstructing the test fixture after testing it."/>
+</node>
+<node CREATED="1507766263111" ID="ID_619223045" MODIFIED="1507766265005" TEXT="def id():string">
+<node CREATED="1507770410020" ID="ID_1145713598" MODIFIED="1507770834875" TEXT="returns a string consisting of the name of the testcase object and of the test routine."/>
+<node CREATED="1507770835715" ID="ID_1505882020" MODIFIED="1507770846399" TEXT="Example: file_name.class_test_name.function_should_be_true"/>
+</node>
+<node CREATED="1507766269331" ID="ID_1009759473" MODIFIED="1507766272031" TEXT="def shortDescription( ):string">
+<node CREATED="1507768629825" ID="ID_1863036727" MODIFIED="1507768840191" TEXT="Returns a one-line description of the test, or None if no description has been provided."/>
+<node CREATED="1507768832493" ID="ID_641099405" MODIFIED="1507770819189" TEXT="The default implementation of this method returns the first line of the specified test method&apos;s docstring."/>
+</node>
+<node CREATED="1507770712931" ID="ID_1694150961" MODIFIED="1507770773030" TEXT="Inside of the test method">
+<node CREATED="1507766123922" ID="ID_229229327" MODIFIED="1507770710487" TEXT="def skipTest(aMesg:string)">
+<node CREATED="1507768671778" ID="ID_784519259" MODIFIED="1507768672773" TEXT="Raise this exception in a test to skip it."/>
+<node CREATED="1507766371310" ID="ID_236586298" LINK="https://www.programcreek.com/python/example/4093/unittest.SkipTest" MODIFIED="1507767309683" TEXT="Link with examples"/>
+</node>
+<node CREATED="1507766124960" ID="ID_1363745102" MODIFIED="1507766256341" TEXT="def fail(aMesg:string)">
+<node CREATED="1507768860702" ID="ID_144289066" MODIFIED="1507768861902" TEXT="Fail immediately, with the given message."/>
+<node CREATED="1507768880975" ID="ID_55324066" LINK="https://www.programcreek.com/python/example/67456/unittest.fail" MODIFIED="1507768887090" TEXT="Link with examples"/>
 </node>
 </node>
 </node>
